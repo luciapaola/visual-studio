@@ -1,0 +1,334 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p{
+    font-size: 1.25em;;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+button{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 6px 10px;
+    border: none;
+    color: white;
+    background-color:#00A4DA ;
+    font: var(--site-secondary-font);
+}
+/*Le damos estilos al hover del boton*/
+button:hover{
+    color: black;
+}
+
+.contenedor{
+    max-width: 1400px;
+    margin: auto;
+}
+
+header{
+    background-color: #00A4DA;
+    /* position: fixed; */
+    width: 100%;
+}
+
+header .logo{
+    margin: 0;
+    padding: 35px 30px;
+    background-image: url(logo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+header .contenedor{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding-bottom: 0;
+    padding-right: 20px;
+}
+
+header a{
+    padding: 5px 12px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(254, 248, 248);
+}
+
+#i{
+    font-size: 20px;
+}
+
+header a:hover{
+    color: rgb(0, 0, 0);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #00A1DA;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/*--------------------------------------------------------------------------*/
+
+
+
+/* BANNER */
+#banner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 50vh;
+    color: white;
+    background-image: url(Copia\ de\ Prototipo_ideal.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#buttonbanner{
+    padding: 10px 20px;
+    background-color: #E13C80;
+    border-radius: 10px;
+}
+
+#experimento{
+    margin-top: 20px;
+}
+
+#experimento h1{
+    color: #50535A;
+    text-align: center;
+    margin: 40px 0px 40px 0px;
+}
+
+.contenedorplanes{
+    margin: auto;
+    height: 500px;
+    width: 1000px;
+    background-color: #ffffff;
+    border: 2px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedorplan{
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.plan_1{
+    width: 270px;
+    height: 350px;
+    background-image: url(nuevo-index.jpg);
+    background-size: cover;
+    margin: auto;
+    border-radius: 15px;
+}
+
+.plan_2{
+    width: 270px;
+    height: 350px;
+    background-image: url(nuevo-index.jpg);
+    background-size: cover;
+    margin: auto;
+    border-radius: 15px;
+}
+
+.plan_3{
+    width: 270px;
+    height: 350px;
+    background-image: url(nuevo-index.jpg);
+    background-size: cover;
+    margin: auto;
+    border-radius: 15px;
+}
+
+.contenedorplanes a{
+    background-color: #E13C80;;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+/* #cards{
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px;
+}
+
+#cards h1{
+    font-size: 40px;
+    margin: 0 0 30px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.valores{
+    display: flex;
+    align-items: center;
+}
+
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid black;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    transition: all .3s ease;
+}
+
+.content > *{
+    flex: 1 1 100%;
+}
+
+.content:hover{
+    color: white;
+}
+
+.content-1:hover{
+    border-color: rgb(0, 0, 0);
+    background: rgb(10, 10, 10);
+}
+
+.content-2:hover{
+    border-color: rgb(0, 0, 0);
+    background: rgb(10, 10, 10);
+}
+
+.content-3:hover{
+    border-color: rgb(0, 0, 0);
+    background: rgb(10, 10, 10);
+}
+
+.content h2{
+    font-size: 25px;
+    margin: 16px 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.content p{
+    font-size: 17px;
+}
+
+.content a{
+    margin: 22px 0;
+    background: rgb(100,100,100);
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 1px solid black;
+    padding: 15px 0;
+    border-radius: 25px;
+    
+} */
+
+footer{
+    background-color: rgb(230,230,230);
+}
+
+footer p{
+    margin: 0;
+    color: rgb(100,100,100);
+}
+
+footer .contenedor{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*experimento*/
+
+
+
+/*beneficios*/
+
+#beneficios{
+    margin-top: 40px;
+}
+
+#beneficios h1{
+    text-transform: uppercase;
+    text-align: center;
+    color: #50535A;
+}
+
+.contenedor__cajas{
+    max-width: 880px;
+    margin: auto;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cajas{
+    width: 218px;
+    height: 200px;
+    background-color: #fff;
+    margin: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cajas i{
+    font-size: 60px;
+    color:#5BC500;
+    margin-bottom: 20px;
+}
+
+.cajas h5{
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #777777;
+}

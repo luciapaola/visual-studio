@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLIENTES MOVISTAR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        pre {
+            color: #162538;
+        }
+
+        .boton-buscar {
+            margin-top: 32px;
+            margin-left: 30px;
+        }
+
+        .boton-limpiar {
+            margin-top: 32px;
+            margin-left: 5px;
+        }
+
+        /* ------------------------------------------------------------ */
+        button {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 6px 10px;
+            border: none;
+            color: white;
+            background-color: #00A4DA;
+            font: var(--site-secondary-font);
+        }
+
+        button:hover {
+            color: black;
+        }
+
+        .contenedor {
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        header {
+            background-color: #00A4DA;
+            /* position: fixed; */
+            width: 100%;
+        }
+
+        header .logo {
+            margin: 0;
+            padding: 35px 30px;
+            background-image: url(logo.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        header .contenedor {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header nav {
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            padding-bottom: 0;
+            padding-right: 20px;
+        }
+
+        header a {
+            padding: 5px 12px;
+            font-size: 18px;
+            text-decoration: none !important;
+            font-weight: bold;
+            color: rgb(254, 248, 248);
+        }
+
+        #i {
+            font-size: 20px;
+        }
+
+
+        header a:hover,
+        header a:focus {
+            text-decoration: none !important;
+            border-bottom: none !important;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #00A1DA;
+            padding: 14px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* --------------------------------------------------------- */
+
+        /* BOTONES CRUD */
+        #botones-crud {
+            color: white;
+            background-color: #e63780;
+            border-color: transparent;
+            box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+            width: 120px;
+            height: 38px;
+            border-radius: 13px;
+            cursor: pointer;
+            overflow: hidden;
+            font-family: 'Dosis', sans-serif;
+            font-weight: 600;
+            /*grosor de la letra*/
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        /* --------------------------------------------------------- */
+
+    </style>
+
+</head>
+<header>
+    <div class="contenedor">
+        <a href="index.html">
+            <div class="logo"></div>
+        </a>
+        <!-- <p class="logo">TuneaMovistar</p> -->
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="planes_1.html">Planes</a>
+            <a href="ClientesUsuarios.html">Usuarios</a>
+            <div class="dropdown">
+                <button class="dropbtn"><i class="lni lni-user" id="i"></i></button>
+                <div class="dropdown-content">
+                    <a href="login.html">Iniciar sesión</a>
+                    <a href="registrar.html">Registrarse</a>
+                </div>
+            </div>
+            <a href="#"><i class="lni lni-cart-full" id="i"></i></a>
+        </nav>
+    </div>
+</header>
+
+<body>
+    <!-- <style>
+        #txtPlan {
+    height: auto;
+    min-height: 68px; /* Ajusta la altura mínima según tus necesidades */
+    }
+    </style> -->
+
+    <div class="container">
+        <div class="card mt-4">
+            <div class="card-header text-center h2">AGREGAR CLIENTE NUEVO</div>
+            <div class="card-body">
+                <form class="was-validated" id="frmPaciente">
+                    <div class="form-group">
+                        <label for="txtNroProfesor">NRO. ORDEN</label>
+                        <input type="text" class="form-control" id="txtNroProfesor" value="0" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtApellidos">APELLIDOS</label>
+                        <input type="text" class="form-control is-invalid" id="txtApellidos"
+                            placeholder="Inserta Apellidos" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtNombres">NOMBRES</label>
+                        <input type="text" class="form-control is-invalid" placeholder="Inserta Nombres" required
+                            id="txtNombres">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtDNI">DNI</label>
+                        <input type="text" class="form-control is-invalid" placeholder="Inserta Dni" required
+                            id="txtDNI" name="dni" maxlength="8" oninput="hideDigits()">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtPlan">PLAN ADQUIRIDO</label>
+                        <textarea class="form-control is-invalid" placeholder="Inserta Plan" required id="txtPlan"
+                            rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtPrecio">PRECIO</label>
+                        <input type="text" class="form-control is-invalid" placeholder="Inserta Precio" required
+                            id="txtPrecio">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtPago">FECHA DE PAGA</label>
+                        <input type="text" class="form-control is-invalid" placeholder="Inserta Fecha" required
+                            id="txtPago">
+                    </div>
+                    <div class="form-group">
+                        <label for="cboPostular">ESTADO</label>
+                        <select class="form-control is-invalid" id="cboPostular" placeholder="Inserta Área" required>
+                            <option value="">Ninguna</option>
+                            <option>Activo</option>
+                            <option>Inactivo</option>
+                            <option>Atraso</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button type="button" class="btn" id="botones-crud" onclick="guardar()">GUARDAR</button>
+                <a href="Clientes.html" class="btn" id="botones-crud">CANCELAR</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="ClientesForm.js" type="text/javascript"></script>

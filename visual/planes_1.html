@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>por ahora</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Saira+Condensed:wght@100&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
+</head>
+<header>
+    <div class="contenedor">
+        <a href="index.html">
+            <div class="logo"></div>
+        </a>
+        <!-- <p class="logo">TuneaMovistar</p> -->
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="planes_1.html">Planes</a>
+            <a href="ClientesUsuarios.html">Usuarios</a>
+            <div class="dropdown">
+                <button class="dropbtn"><i class="lni lni-user" id="i"></i></button>
+                <div class="dropdown-content">
+                    <a href="login.html">Iniciar sesión</a>
+                    <a href="registrar.html">Registrarse</a>
+                </div>
+            </div>
+            <a href="carrito.html"><i class="lni lni-cart-full" id="i"></i></a>
+        </nav>
+    </div>
+</header>
+<body>
+
+    <h1 class="title_line">Personaliza tus planes</h1><br>
+    <h3 class="sub_title">¡Estamos felices de que estés aquí! Como regalo te brindamos las mejores planes personalizables.</h3>
+
+    <section class="main1">
+        <div class="card_3">
+            <div class="imagen">
+                <img id="seleccion_img" src="" alt="imagen-producto-1" width="100%" height="100%" >
+                </div>
+                <div class="contenido">
+                    <div class="titulo">
+                        <h2>Internet hogar</h2>                                               
+                    </div>
+                    <div class="texto"><br>
+                        <p class="p">- Mejor velocidad de conexión <br> - Buena cobertura <br>- Garantia de seguridad </p>
+                    </div><br>
+                    <div class="lista">Precio:
+                        <span id="precio" class="money"></span>
+                        <p class="line"></p>Mbps:
+                        <select id="opcion_precio_1" onchange="calcularPrecio()">
+                            <option value="1">50</option>
+                            <option value="2">60</option>
+                            <option value="3">70</option>
+                            <option value="4">80</option>
+                            <option value="5">90</option>
+                            <option value="6">100</option>
+                            <option value="7">200</option>
+                            <option value="8">300</option>
+                            <option value="9">400</option>
+                            <option value="10">500</option>
+                            <option value="11">600</option>
+                            <option value="12">700</option>
+                            <option value="13">800</option>
+                            <option value="14">900</option>
+                            <option value="15">1000</option>
+                        </select>
+                    </div><br>
+                    <div class="btn">
+                        <button onclick="agregarAlCarrito({ nombre: 'Internet hogar', precio: document.getElementById('precio').textContent, imagen:document.getElementById('seleccion_img') })">Agregar plan</button>
+                    </div>
+            </div>
+            
+        </div>
+    
+        <div class="card_3">
+            <div class="imagen">
+                <img id="seleccion_img2" src="" alt="" width="100%" height="100%" >
+                </div>
+                <div class="contenido">
+                    <div class="titulo">
+                        <h2>Cable hogar</h2>
+                    </div>
+                    <div class="texto"><br>
+                        <p class="p">- Variedad de canales <br>- Excelente calidad de imagen y sonido</p>
+                    </div><br>
+                    <div class="lista">Precio:
+                        <span id="precio2" class="money"></span>
+                        <p class="line"></p>Canales:
+                        <select id="opcion_precio_2" onchange="calcularPrecio2()">
+                            <option value="1">20</option>
+                            <option value="2">30</option>
+                            <option value="3">40</option>
+                            <option value="4">50</option>
+                            <option value="5">60</option>
+                        </select>
+                    </div><br>
+                    <div class="btn">
+                        <button onclick="agregarAlCarrito({ nombre: 'Cable hogar', precio: document.getElementById('precio2').textContent, imagen:document.getElementById('seleccion_img2') })">Agregar plan</button>
+                    </div>
+            </div>
+            
+        </div>
+    
+        <div class="card_3">
+            <div class="imagen">
+                <img src="nuevito.jpg" alt="megas" width="100%" height="100%" >
+                </div>
+                <div class="contenido">
+                    <div class="titulo">
+                        <h2>Telefonía</h2>
+                    </div>
+                    <div class="texto"><br>
+                        <p class="p">- Mejor velocidad de conexión <br>- Cobertura confiable <br>- Servicio de calidad </p>
+                    </div><br>
+                    <div class="lista">Precio:
+                        <span id="precio3" class="money">S/12</span>
+                        <p class="line"></p>
+                        <label>Plan unico</label>
+                    </div><br>
+                    <div class="btn">
+                        <button onclick="agregarAlCarrito({ nombre: 'Telefonía', precio: document.getElementById('precio3').textContent, imagen: 'nuevito.jpg' })">Agregar plan</button>
+                    </div>
+            </div>
+        </div>
+</section>
+    
+<section class="main2">
+    <div class="descrip_conteiner">
+       <div class="one-descrip cube">
+            <h3 class="title_sub">Internet</h3>
+            <p class="sub_descrip"> Navega en tus apps mas usadas ilimitadamente.<br>
+                <div class="apps">
+                    <img  width="35" height="35" src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="whatsapp--v1"/>
+                    <img  width="35" height="35" src="https://img.icons8.com/fluency/48/instagram-new.png" alt="instagram-new"/>
+                    <img  width="35" height="35" src="https://img.icons8.com/color/48/facebook-new.png" alt="facebook-new"/>
+                    <img  width="35" height="35" src="https://img.icons8.com/color/48/facebook-messenger--v1.png" alt="facebook-messenger--v1"/>
+                </div>
+            <p class="separador"></p>
+            <p class="sub_descrip"> Puedes compartir tus gigas y usar tu itinerancia de datos.<br><p class="separador"></p>
+            <p class="sub_descrip"> Algunos de nuestros planes pueden tener limite de datos, dependiendo del uso que le des.<br>
+
+       </div>
+       <div class="one-descrip cube">
+        <h3 class="title_sub">Cable</h3>
+        <p class="sub_descrip"> Dispositivos en los que puedes conectar tu cable.<br>
+            <div class="apps">
+                <img width="48" height="48" src="https://img.icons8.com/fluency/48/disney-plus.png" alt="disney-plus"/>
+            </div>
+            <p class="separador"></p>
+            <p class="sub_descrip">Velocidad mínima garantizada de 70% de la velocidad contratada para planes de Fibra Óptica.<br><p class="separador"></p>
+            <p class="sub_descrip"> Además de la programación regular, podrás disfrutar de canales exclusivos con tu plan Movistar TV ( Movistar deportes, GolPeru, Movistar Plus y RPP Noticias)..<br>
+       </div>
+       <div class="thre-descrip"></div>
+    </div>
+    
+</section>
+
+<h2 class="title_line2">El plan de internet que te sienta mejor</h2>
+
+
+    <section class="movies container">
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <div class="img-person">
+                        <img src="reco_family.jpg" alt="">
+                    </div>
+                    <div class="content-recomend">
+                        <h3>Familiar <br><small style="font-size: 15px;">(5-9 miembros)</small></h3>
+                        <span class="plan-recomend">400Mb+</span>
+                        <p>Este plan se adapta perfectamente si tienes una familia 
+                            numerosa.Tendras una conexión estable aun usando multiples
+                            dispositivos vinculados.</p>
+                            <button class="btn_recomend">Ir al plan</button>
+                    </div>
+                   
+                </div>
+                <div class="swiper-slide">
+                    <div class="img-person">
+                        <img src="reco_gamer.jpg" alt="">
+                    </div>
+                    <div class="content-recomend">
+                        <h3>Gamer</h3>
+                        <span class="plan-recomend">100Mb+</span>
+                        <p>Este plan se adapta perfectamente si tienes una familia 
+                            numerosa.Tendras una conexión estable aun usando multiples
+                            dispositivos vinculados.</p>
+                            <button class="btn_recomend">Ir al plan</button>
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <div class="img-person">
+                        <img src="reco_student.jpg" alt="">
+                    </div>
+                    <div class="content-recomend">
+                        <h3>Estudiante</h3>
+                        <span class="plan-recomend">70Mb+</span>
+                        <p>Este plan se adapta perfectamente si tienes una familia 
+                            numerosa.Tendras una conexión estable aun usando multiples
+                            dispositivos vinculados.</p>
+                            <button class="btn_recomend">Ir al plan</button>
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <div class="img-person">
+                        <img src="reco_freelance.jpg" alt="">
+                    </div>
+                    <div class="content-recomend">
+                        <h3>Freelance</h3>
+                        <span class="plan-recomend">200Mb+</span>
+                        <p>Este plan se adapta perfectamente si tienes una familia 
+                            numerosa.Tendras una conexión estable aun usando multiples
+                            dispositivos vinculados.</p>
+                            <button class="btn_recomend">Ir al plan</button>
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <div class="img-person">
+                        <img src="reco_programador.jpg" alt="">
+                    </div>
+                    <div class="content-recomend">
+                        <h3>Programador</h3>
+                        <span class="plan-recomend">200Mb+</span>
+                        <p>Este plan se adapta perfectamente si tienes una familia 
+                            numerosa.Tendras una conexión estable aun usando multiples
+                            dispositivos vinculados.</p>
+                            <button class="btn_recomend">Ir al plan</button>
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <div class="img-person">
+                        <img src="reco_youtuber.jpg" alt="">
+                    </div>
+                    <div class="content-recomend">
+                        <h3>Youtuber o Streamer</h3>
+                        <span class="plan-recomend">500Mb+</span>
+                        <p>Este plan se adapta perfectamente si tienes una familia 
+                            numerosa.Tendras una conexión estable aun usando multiples
+                            dispositivos vinculados.</p>
+                            <button class="btn_recomend">Ir al plan</button>
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <div class="img-person">
+                        <img src="reco_influencer.jpg" alt="">
+                    </div>
+                    <div class="content-recomend">
+                        <h3>Influencer</h3>
+                        <span class="plan-recomend">400Mb+</span>
+                        <p>Este plan se adapta perfectamente si tienes una familia 
+                            numerosa.Tendras una conexión estable aun usando multiples
+                            dispositivos vinculados.</p>
+                            <button class="btn_recomend">Ir al plan</button>
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <div class="img-person">
+                        <img src="reco_normal.jpg" alt="">
+                    </div>
+                    <div class="content-recomend">
+                        <h3>Normal</h3>
+                        <span class="plan-recomend">50Mb+</span>
+                        <p>Este plan se adapta perfectamente si tienes una familia 
+                            numerosa.Tendras una conexión estable aun usando multiples
+                            dispositivos vinculados.</p>
+                            <button class="btn_recomend">Ir al plan</button>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+
+    </section>
+    <!-- <section>
+        <p class="end_page">Pie de pagina</p>
+    </section> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="script.js" ></script>
+</body>
+</html>
